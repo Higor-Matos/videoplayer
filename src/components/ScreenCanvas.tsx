@@ -24,7 +24,7 @@ const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
     return () => {
       window.removeEventListener("resize", handleResize);
     };
-  });
+  }, []);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -32,7 +32,15 @@ const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
     const ctx = canvas.getContext("2d");
     const img = new Image();
     img.onload = () => {
-      ctx?.drawImage(img, 0, 0, dimensions.width, dimensions.height);
+      let scale = Math.min(
+        dimensions.width / img.width,
+        dimensions.height / img.height
+      );
+      let imageWidth = img.width * scale;
+      let imageHeight = img.height * scale;
+      let x = (dimensions.width - imageWidth) / 2;
+      let y = (dimensions.height - imageHeight) / 2;
+      ctx?.drawImage(img, x, y, imageWidth, imageHeight);
     };
     img.src = imgSrc;
   }, [imgSrc, dimensions]);
@@ -47,6 +55,8 @@ const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
 
   const canvasStyle = {
     cursor: showCursor ? "auto" : "none",
+    display: "block",
+    margin: "0 auto",
   };
 
   return (
