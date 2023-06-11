@@ -10,6 +10,7 @@ const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
     height: window.innerHeight,
     width: window.innerWidth,
   });
+  const [showCursor, setShowCursor] = useState(false);
 
   useEffect(() => {
     function handleResize() {
@@ -20,7 +21,7 @@ const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
     }
     window.addEventListener("resize", handleResize);
 
-    return (_) => {
+    return () => {
       window.removeEventListener("resize", handleResize);
     };
   });
@@ -36,12 +37,26 @@ const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
     img.src = imgSrc;
   }, [imgSrc, dimensions]);
 
+  const handleMouseEnter = () => {
+    setShowCursor(true);
+  };
+
+  const handleMouseLeave = () => {
+    setShowCursor(false);
+  };
+
+  const canvasStyle = {
+    cursor: showCursor ? "auto" : "none",
+  };
+
   return (
     <canvas
       ref={canvasRef}
-      style={{ cursor: "none" }}
+      style={canvasStyle}
       width={dimensions.width}
       height={dimensions.height}
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
     />
   );
 };
