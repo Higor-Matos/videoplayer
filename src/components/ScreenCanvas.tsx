@@ -1,56 +1,26 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
+import useWindowDimensions from "../hooks/useWindowDimensions";
+import useCanvasImage from "../hooks/useCanvasImage";
+import FullScreenButton from "./FullScreenButton";
 
 interface ScreenCanvasProps {
   imgSrc: string;
 }
 
 const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
-  const canvasRef = useRef<HTMLCanvasElement | null>(null);
-  const [dimensions, setDimensions] = useState({
-    height: window.innerHeight,
-    width: window.innerWidth,
-  });
+  const dimensions = useWindowDimensions();
+  const canvasRef = useCanvasImage(imgSrc, dimensions);
   const [showCursor, setShowCursor] = useState(false);
 
-  useEffect(() => {
-    function handleResize() {
-      setDimensions({
-        height: window.innerHeight,
-        width: window.innerWidth,
-      });
+  const handleMouseEnter = () => setShowCursor(true);
+  const handleMouseLeave = () => setShowCursor(false);
+
+  const toggleFullscreen = () => {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen();
+    } else if (document.exitFullscreen) {
+      document.exitFullscreen();
     }
-    window.addEventListener("resize", handleResize);
-
-    return () => {
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
-  useEffect(() => {
-    const canvas = canvasRef.current;
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-    const img = new Image();
-    img.onload = () => {
-      let scale = Math.min(
-        dimensions.width / img.width,
-        dimensions.height / img.height
-      );
-      let imageWidth = img.width * scale;
-      let imageHeight = img.height * scale;
-      let x = (dimensions.width - imageWidth) / 2;
-      let y = (dimensions.height - imageHeight) / 2;
-      ctx?.drawImage(img, x, y, imageWidth, imageHeight);
-    };
-    img.src = imgSrc;
-  }, [imgSrc, dimensions]);
-
-  const handleMouseEnter = () => {
-    setShowCursor(true);
-  };
-
-  const handleMouseLeave = () => {
-    setShowCursor(false);
   };
 
   const canvasStyle = {
@@ -60,14 +30,17 @@ const ScreenCanvas: React.FC<ScreenCanvasProps> = ({ imgSrc }) => {
   };
 
   return (
-    <canvas
-      ref={canvasRef}
-      style={canvasStyle}
-      width={dimensions.width}
-      height={dimensions.height}
-      onMouseEnter={handleMouseEnter}
-      onMouseLeave={handleMouseLeave}
-    />
+    <>
+      <canvas
+        ref={canvasRef}
+        style={canvasStyle}
+        width={dimensions.width}
+        height={dimensions.height}
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      />
+      <FullScreenButton onClick={toggleFullscreen} />
+    </>
   );
 };
 

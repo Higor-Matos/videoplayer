@@ -1,18 +1,30 @@
-import styled from "styled-components";
+import React from "react";
+import { FiMaximize2 } from "react-icons/fi";
 
-const FullscreenButton = styled.button`
-  position: absolute;
-  right: 20px;
-  bottom: 20px;
-  background: rgba(0, 0, 0, 0.5);
-  border: none;
-  color: #fff;
-  padding: 10px;
-  border-radius: 5px;
-  font-size: 24px;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-`;
+interface FullScreenButtonProps {
+  onClick: () => void;
+}
 
-export default FullscreenButton;
+const FullScreenButton: React.FC<FullScreenButtonProps> = ({ onClick }) => (
+  <div
+    style={{
+      position: "fixed",
+      bottom: "20px",
+      left: "50%",
+      transform: "translateX(-50%)",
+      backgroundColor: "rgba(255, 255, 255, 0.7)",
+      borderRadius: "50%",
+      boxShadow: "0px 0px 10px rgba(0,0,0,0.5)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      height: "50px",
+      width: "50px",
+    }}
+    onClick={onClick}
+  >
+    <FiMaximize2 size={24} color="black" />
+  </div>
+);
+
+export default FullScreenButton;
