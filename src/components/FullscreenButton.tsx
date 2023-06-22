@@ -7,6 +7,7 @@ interface FullScreenButtonProps {
 
 const FullScreenButton: React.FC<FullScreenButtonProps> = ({ onClick }) => (
   <div
+    className="fullscreen-button"
     style={{
       position: "fixed",
       bottom: "20px",
