@@ -38,7 +38,7 @@ Você tem duas opções para o servidor de streaming de tela:
 
 - 📦 Se você quiser usar o servidor de streaming de tela mencionado neste frontend, você pode encontrar o repositório correspondente em [https://github.com/Higor-Matos/ScreenStreamingServer](https://github.com/Higor-Matos/ScreenStreamingServer). Siga as instruções fornecidas no repositório para executar o servidor.
 
-- 🚀 Se você preferir usar o seu próprio servidor de streaming de tela desenvolvido por você.
+- 🚀 Se você preferir usar o seu próprio servidor de streaming de tela ou algum do mercado.
 
 ## Contribuição
 
