@@ -1,18 +1,15 @@
 # Frontend React TypeScript + Vite - Streaming de Tela
 
-Este é um frontend em React TypeScript com Vite que se conecta ao servidor de streaming de tela por meio de uma conexão WebSocket. Ele permite exibir o streaming de tela em tempo real em um navegador.
+🌟 Este é um frontend em React TypeScript com Vite que se conecta ao servidor de streaming de tela por meio de uma conexão WebSocket. Ele permite exibir o streaming de tela em tempo real em um navegador.
 
 ## Tecnologias utilizadas
 
-- React
-- TypeScript
-- Vite
-- WebSocket
+🚀 React | TypeScript | Vite | WebSocket
 
 ## Funcionalidades
 
-- Conexão com o servidor de streaming de tela por meio de uma conexão WebSocket.
-- Exibição em tempo real do streaming de tela recebido do servidor.
+✔️ Conexão com o servidor de streaming de tela por meio de uma conexão WebSocket.
+✔️ Exibição em tempo real do streaming de tela recebido do servidor.
 
 ## Como usar
 
@@ -39,10 +36,14 @@ Certifique-se de que a porta `5173` esteja disponível em sua máquina. Caso con
 
 Você tem duas opções para o servidor de streaming de tela:
 
-- Se você quiser usar o servidor de streaming de tela mencionado neste frontend, você pode encontrar o repositório correspondente em [https://github.com/Higor-Matos/ScreenStreamingServer](https://github.com/Higor-Matos/ScreenStreamingServer). Siga as instruções fornecidas no repositório para executar o servidor.
+- 📦 Se você quiser usar o servidor de streaming de tela mencionado neste frontend, você pode encontrar o repositório correspondente em [https://github.com/Higor-Matos/ScreenStreamingServer](https://github.com/Higor-Matos/ScreenStreamingServer). Siga as instruções fornecidas no repositório para executar o servidor.
 
-- Se você preferir usar o seu próprio servidor de streaming de tela desenvolvido por você.
+- 🚀 Se você preferir usar o seu próprio servidor de streaming de tela desenvolvido por você.
 
 ## Contribuição
 
-Contribuições são bem-vindas! Sinta-se à vontade para abrir um "issue" ou enviar um "pull request" com melhorias, correções de bugs ou novos recursos.
+Contribuições são bem-vindas! Sinta-se à vontade para abrir um "issue" ou enviar um "pull request" com melhorias, correções de bugs ou novos recursos. 🎉
+
+## Entrevista sobre o projeto
+
+Confira uma entrevista sobre este projeto no YouTube: [Entrevista - Frontend React TypeScript + Vite - Streaming de Tela](https://www.youtube.com/watch?v=dFQMuRxyf1c)
