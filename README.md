@@ -46,4 +46,4 @@ Contribuições são bem-vindas! Sinta-se à vontade para abrir um "issue" ou en
 
 ## Entrevista sobre o projeto
 
-Confira uma entrevista sobre este projeto no YouTube: [Entrevista - Frontend React TypeScript + Vite - Streaming de Tela](https://www.youtube.com/watch?v=dFQMuRxyf1c)
+Confira uma entrevista sobre este projeto no YouTube: [Entrevista - Expotech](https://www.youtube.com/watch?v=dFQMuRxyf1c)
