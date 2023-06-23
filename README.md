@@ -42,7 +42,7 @@ Você tem duas opções para o servidor de streaming de tela:
 
 ## 🧪 Qualidade de Software
 
-A fim de garantir a qualidade do software, o projeto Net Master Frontend utilizou a ferramenta Sonar. O Sonar é uma plataforma de análise estática de código que realiza verificações automatizadas para identificar problemas de qualidade, como vulnerabilidades, bugs, dívidas técnicas e violações de boas práticas de programação.
+A fim de garantir a qualidade do software, o projeto utilizou a ferramenta Sonar. O Sonar é uma plataforma de análise estática de código que realiza verificações automatizadas para identificar problemas de qualidade, como vulnerabilidades, bugs, dívidas técnicas e violações de boas práticas de programação.
 
 Durante o desenvolvimento, foram realizadas análises regulares com o Sonar para garantir a conformidade com os padrões de qualidade estabelecidos. As análises do Sonar forneceram insights valiosos sobre a saúde do código, permitindo a identificação de áreas de melhoria e a adoção de práticas recomendadas para o desenvolvimento de software.
 
